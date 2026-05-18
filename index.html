@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trimara</title>
+    <meta
+      name="description"
+      content="Consulting, installation et maintenance d'agents IA conversationnels et de solutions d'automatisations."
+    >
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #ffffff;
+        --paper: #ffffff;
+        --ink: #050505;
+        --muted: #555555;
+        --soft: #e7e7e4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 18% 14%, rgba(5, 5, 5, 0.035), transparent 18%),
+          radial-gradient(circle at 86% 78%, rgba(5, 5, 5, 0.03), transparent 22%),
+          linear-gradient(135deg, #ffffff 0%, #fafafa 48%, #ffffff 100%);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        letter-spacing: 0;
+      }
+
+      main {
+        position: relative;
+        width: min(1180px, calc(100% - clamp(28px, 6vw, 72px)));
+        min-height: calc(100vh - clamp(28px, 6vw, 72px));
+        margin: clamp(14px, 3vw, 36px) auto;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, rgba(5, 5, 5, 0.018) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(5, 5, 5, 0.018) 1px, transparent 1px),
+          var(--paper);
+        background-size: 20px 20px;
+      }
+
+      main::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        pointer-events: none;
+        background:
+          linear-gradient(28deg, transparent 70%, rgba(5, 5, 5, 0.035) 70.1%, transparent 70.25%),
+          linear-gradient(146deg, transparent 74%, rgba(5, 5, 5, 0.028) 74.1%, transparent 74.25%);
+      }
+
+      header,
+      .promo,
+      .contact-panel {
+        position: relative;
+        z-index: 1;
+        padding-inline: clamp(26px, 6vw, 72px);
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding-top: clamp(24px, 4vw, 44px);
+      }
+
+      .brand {
+        color: var(--ink);
+        font-size: clamp(18px, 2vw, 24px);
+        font-weight: 800;
+        line-height: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+      }
+
+      .top-link {
+        border-bottom: 1px solid currentColor;
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.2;
+        text-decoration: none;
+      }
+
+      .promo {
+        align-self: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-block: clamp(48px, 8vw, 96px);
+      }
+
+      .promo-cell {
+        padding: clamp(22px, 4vw, 42px);
+        background: rgba(255, 255, 255, 0.32);
+      }
+
+      .eyebrow {
+        margin: 0 0 22px;
+        color: var(--muted);
+        font-size: clamp(13px, 1.4vw, 15px);
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(42px, 7vw, 92px);
+        font-weight: 850;
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      .summary {
+        max-width: 760px;
+        margin: clamp(24px, 4vw, 38px) 0 0;
+        color: var(--muted);
+        font-size: clamp(19px, 2vw, 25px);
+        line-height: 1.45;
+      }
+
+      .promo-services,
+      .tech-stack {
+        grid-column: 1 / -1;
+      }
+
+      .cell-title {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        margin: 0;
+        padding: 1px;
+        background: var(--ink);
+        list-style: none;
+      }
+
+      .services li {
+        min-height: 56px;
+        display: grid;
+        place-items: center;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .tech-stack {
+        margin: 0;
+      }
+
+      .tech-title {
+        margin-bottom: 18px;
+      }
+
+      .tech-logos {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        padding: 1px;
+        background: transparent;
+      }
+
+      .tech-logo {
+        min-height: 74px;
+        display: grid;
+        place-items: center;
+        padding: 18px;
+        background: transparent;
+      }
+
+      .tech-logo img {
+        max-width: min(150px, 100%);
+        max-height: 36px;
+        display: block;
+        filter: grayscale(1);
+        object-fit: contain;
+      }
+
+      .contact-panel {
+        border-top: 1px solid var(--ink);
+        display: grid;
+        grid-template-columns: minmax(180px, 0.62fr) minmax(320px, 1fr) minmax(180px, 0.55fr);
+        gap: 0;
+        align-items: stretch;
+        padding-block: clamp(30px, 5vw, 54px);
+        background: transparent;
+      }
+
+      .profile-card {
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        gap: 16px;
+        min-height: 360px;
+        padding: clamp(22px, 3vw, 34px);
+        background: transparent;
+        text-align: center;
+      }
+
+      .profile-photo {
+        width: clamp(132px, 15vw, 190px);
+        height: clamp(132px, 15vw, 190px);
+        border: 1px solid var(--ink);
+        border-radius: 50%;
+        object-fit: cover;
+        filter: grayscale(1);
+      }
+
+      .profile-name {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(24px, 2.8vw, 34px);
+        font-weight: 850;
+        line-height: 1;
+        letter-spacing: 0.02em;
+      }
+
+      .profile-title {
+        margin: -8px 0 0;
+        color: var(--muted);
+        font-size: clamp(15px, 1.6vw, 18px);
+        line-height: 1.35;
+      }
+
+      .contact-grid {
+        display: grid;
+        gap: 0;
+        min-height: 360px;
+        padding: clamp(18px, 3vw, 28px);
+        border-inline: 1px solid var(--ink);
+        background: transparent;
+      }
+
+      .contact-item {
+        min-height: 74px;
+        display: grid;
+        align-content: center;
+        gap: 6px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--soft);
+        background: transparent;
+      }
+
+      .contact-item:last-child {
+        border-bottom: 0;
+      }
+
+      .contact-label {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .contact-value,
+      .contact-value a {
+        color: var(--ink);
+        font-size: clamp(17px, 1.8vw, 22px);
+        font-weight: 650;
+        line-height: 1.22;
+        text-decoration: none;
+        overflow-wrap: anywhere;
+      }
+
+      .linkedin-item,
+      .linkedin-item:visited,
+      .linkedin-item:hover,
+      .linkedin-item:active,
+      .linkedin-item:focus,
+      .linkedin-item .contact-value {
+        color: var(--ink);
+        text-decoration: none;
+      }
+
+      .unicode {
+        margin-right: 8px;
+        font-family: "Apple Symbols", "Segoe UI Symbol", "Noto Sans Symbols", sans-serif;
+      }
+
+      .linkedin-item {
+        grid-template-columns: auto 1fr;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .linkedin-mark {
+        width: 34px;
+        height: 34px;
+        display: block;
+        object-fit: contain;
+      }
+
+      .qr-panel {
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        gap: 12px;
+        min-height: 360px;
+        padding: clamp(22px, 3vw, 34px);
+        background: transparent;
+      }
+
+      .qr-frame {
+        width: clamp(148px, 15vw, 190px);
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+      }
+
+      .qr-frame img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+        filter: grayscale(1);
+      }
+
+      .qr-label {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 820px) {
+        main {
+          width: calc(100% - 24px);
+          min-height: calc(100vh - 24px);
+          margin: 12px auto;
+        }
+
+        header,
+        .promo,
+        .contact-panel {
+          padding-inline: 22px;
+        }
+
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+          padding-top: 22px;
+        }
+
+        .promo {
+          grid-template-columns: 1fr;
+          padding-block: 42px;
+        }
+
+        .services {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .tech-logos {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-panel {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .profile-card {
+          grid-template-columns: auto 1fr;
+          align-items: center;
+          align-content: center;
+          justify-items: start;
+          min-height: 0;
+          text-align: left;
+        }
+
+        .profile-title {
+          grid-column: 2;
+        }
+
+        .contact-grid {
+          width: 100%;
+          min-height: 0;
+          border-block: 1px solid var(--ink);
+          border-inline: 0;
+        }
+
+        .qr-panel {
+          min-height: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <a class="brand" href="/" aria-label="Trimara">Trimara</a>
+        <a class="top-link" href="mailto:bsleboda@trimara.studio">Contact</a>
+      </header>
+
+      <section class="promo" aria-labelledby="title">
+        <section class="promo-cell promo-head" aria-label="Positionnement">
+          <p class="eyebrow">AI &amp; Automation Solutions</p>
+          <h1 id="title">Agents IA conversationnels et automatisations.</h1>
+          <p class="summary">
+            Consulting, installation et maintenance de solutions simples, fiables
+            et adaptées aux opérations de votre organisation.
+          </p>
+        </section>
+
+        <section class="promo-cell promo-services" aria-label="Services">
+          <h2 class="cell-title">Services</h2>
+          <ul class="services">
+            <li>Consulting</li>
+            <li>Installation</li>
+            <li>Maintenance</li>
+            <li>Automatisation</li>
+          </ul>
+        </section>
+
+        <section class="promo-cell tech-stack" aria-label="Tech Stack">
+          <h2 class="cell-title tech-title">Tech Stack</h2>
+          <div class="tech-logos">
+            <div class="tech-logo">
+              <img src="assets/elevenlabs-logo-black.png" alt="ElevenLabs" width="150" height="36">
+            </div>
+            <div class="tech-logo">
+              <img src="assets/Openclaw-logo-text-dark.png" alt="OpenClaw" width="150" height="36">
+            </div>
+            <div class="tech-logo">
+              <img src="assets/N8n-logo-new.svg" alt="n8n" width="150" height="36">
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="contact-panel" aria-label="Coordonnées">
+        <section class="profile-card" aria-labelledby="contact-name">
+          <img
+            class="profile-photo"
+            src="assets/trimara-founder.jpeg"
+            alt="Portrait de Blazej SLEBODA"
+            width="300"
+            height="300"
+          >
+          <h2 class="profile-name" id="contact-name">Blazej SLEBODA</h2>
+          <p class="profile-title">Consultant IA<br>Installateur des Agents IA</p>
+        </section>
+
+        <section class="contact-grid" aria-label="Détails de contact">
+          <div class="contact-item">
+            <div class="contact-label"><span class="unicode">✉</span>Email</div>
+            <div class="contact-value">
+              <a href="mailto:bsleboda@trimara.studio">bsleboda@trimara.studio</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-label"><span class="unicode">☎</span>Téléphone</div>
+            <div class="contact-value">
+              <a href="tel:+33661064248">+33.06.61.06.42.48</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-label"><span class="unicode">⌘</span>Site</div>
+            <div class="contact-value">
+              <a href="https://trimara.studio">trimara.studio</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-label"><span class="unicode">⌖</span>Quartier Général</div>
+            <div class="contact-value">Entre Caen et la mer</div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-label"><span class="unicode">§</span>SIREN</div>
+            <div class="contact-value">792031155</div>
+          </div>
+
+          <a
+            class="contact-item linkedin-item"
+            href="https://www.linkedin.com/in/blazejsleboda"
+            target="_blank"
+            rel="noopener"
+            aria-label="Profil LinkedIn de Blazej SLEBODA"
+          >
+            <img
+              class="linkedin-mark"
+              src="assets/InBug-Black.png"
+              alt=""
+              width="34"
+              height="34"
+              aria-hidden="true"
+            >
+            <span>
+              <span class="contact-value">linkedin.com/in/blazejsleboda</span>
+            </span>
+          </a>
+        </section>
+
+        <section class="qr-panel" aria-label="QR code contact">
+          <div class="qr-frame">
+            <img
+              src="assets/trimara-qrcode.png"
+              alt="QR code des coordonnées Trimara"
+              width="300"
+              height="300"
+            >
+          </div>
+        </section>
+      </footer>
+    </main>
+  </body>
+</html>
