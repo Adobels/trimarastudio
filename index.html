@@ -116,6 +116,27 @@
         text-transform: uppercase;
       }
 
+      .promo-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 0 22px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .promo-icons li {
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(5, 5, 5, 0.16);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.72);
+        font-size: 20px;
+        line-height: 1;
+      }
+
       h1 {
         max-width: 760px;
         margin: 0;
@@ -124,6 +145,10 @@
         font-weight: 850;
         line-height: 0.96;
         letter-spacing: 0;
+      }
+
+      .ai-highlight {
+        color: #0a66c2;
       }
 
       .summary {
@@ -151,23 +176,36 @@
 
       .services {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 1px;
+        gap: 0;
         margin: 0;
-        padding: 1px;
-        background: var(--ink);
+        padding: 0;
+        border-block: 1px solid var(--ink);
+        background: transparent;
         list-style: none;
       }
 
       .services li {
-        min-height: 56px;
+        min-height: 58px;
         display: grid;
-        place-items: center;
-        background: var(--paper);
+        grid-template-columns: minmax(150px, 0.42fr) minmax(0, 1fr);
+        align-items: center;
+        gap: clamp(18px, 4vw, 48px);
+        border-bottom: 1px solid var(--soft);
+        background: transparent;
         color: var(--ink);
-        font-size: 15px;
+        font-size: clamp(18px, 2vw, 23px);
         font-weight: 700;
-        text-align: center;
+      }
+
+      .services li:last-child {
+        border-bottom: 0;
+      }
+
+      .service-result {
+        color: var(--muted);
+        font-size: clamp(16px, 1.6vw, 20px);
+        font-weight: 500;
+        line-height: 1.35;
       }
 
       .tech-stack {
@@ -179,18 +217,21 @@
       }
 
       .tech-logos {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1px;
-        padding: 1px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 0;
         background: transparent;
       }
 
       .tech-logo {
-        min-height: 74px;
+        min-width: 170px;
+        min-height: 68px;
         display: grid;
         place-items: center;
-        padding: 18px;
+        border: 1px solid rgba(5, 5, 5, 0.18);
+        padding: 16px 20px;
         background: transparent;
       }
 
@@ -377,12 +418,10 @@
           padding-block: 42px;
         }
 
-        .services {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .tech-logos {
+        .services li {
           grid-template-columns: 1fr;
+          gap: 6px;
+          padding-block: 14px;
         }
 
         .contact-panel {
@@ -426,20 +465,38 @@
       <section class="promo" aria-labelledby="title">
         <section class="promo-cell promo-head" aria-label="Positionnement">
           <p class="eyebrow">AI &amp; Automation Solutions</p>
-          <h1 id="title">Agents IA conversationnels et automatisations.</h1>
+          <ul class="promo-icons" aria-label="Domaines IA">
+            <li title="Agents IA">🤖</li>
+            <li title="Conversationnel">💬</li>
+            <li title="Automatisation">⚙️</li>
+          </ul>
+          <h1 id="title"><span class="ai-highlight">Agents IA</span> conversationnels et automatisations.</h1>
           <p class="summary">
-            Consulting, installation et maintenance de solutions simples, fiables
-            et adaptées aux opérations de votre organisation.
+            Consulting, installation et maintenance d’agents IA conversationnels,
+            fiables et adaptés aux opérations de votre activité, entreprise,
+            association ou organisation.
           </p>
         </section>
 
         <section class="promo-cell promo-services" aria-label="Services">
           <h2 class="cell-title">Services</h2>
           <ul class="services">
-            <li>Consulting</li>
-            <li>Installation</li>
-            <li>Maintenance</li>
-            <li>Automatisation</li>
+            <li>
+              <span>Consulting</span>
+              <span class="service-result">Cadrer les besoins IA</span>
+            </li>
+            <li>
+              <span>Installation</span>
+              <span class="service-result">Déployer les agents</span>
+            </li>
+            <li>
+              <span>Maintenance</span>
+              <span class="service-result">Suivre et améliorer</span>
+            </li>
+            <li>
+              <span>Automatisation</span>
+              <span class="service-result">Connecter les outils</span>
+            </li>
           </ul>
         </section>
 
@@ -454,6 +511,9 @@
             </div>
             <div class="tech-logo">
               <img src="assets/N8n-logo-new.svg" alt="n8n" width="150" height="36">
+            </div>
+            <div class="tech-logo">
+              <img src="assets/OpenAI-black-wordmark.png" alt="OpenAI" width="150" height="36">
             </div>
           </div>
         </section>
