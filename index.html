@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Trimara | Consultant IA</title>
+    <title>Trimara | Agents IA & Automatisation</title>
     <meta
       name="description"
-      content="Consultant IA pour l'installation, la configuration et la maintenance d'agents IA conversationnels pour sites web."
+      content="Trimara installe des agents IA conversationnels, des automatisations et des systèmes d'observation pour sites web, entreprises locales, associations et équipes techniques."
     >
     <style>
       :root {
         color-scheme: light;
-        --bg: #ffffff;
         --ink: #050505;
-        --muted: #595959;
-        --soft: #e8e8e8;
-        --panel: rgba(255, 255, 255, 0.72);
+        --muted: #5d5d5d;
+        --soft: #e6e6e6;
+        --paper: #ffffff;
+        --wash: rgba(255, 255, 255, 0.72);
       }
 
       * {
@@ -30,8 +30,8 @@
         margin: 0;
         min-height: 100vh;
         background:
-          radial-gradient(circle at 12% 8%, rgba(5, 5, 5, 0.035), transparent 20%),
-          radial-gradient(circle at 84% 92%, rgba(5, 5, 5, 0.028), transparent 24%),
+          radial-gradient(circle at 14% 8%, rgba(5, 5, 5, 0.035), transparent 19%),
+          radial-gradient(circle at 86% 90%, rgba(5, 5, 5, 0.028), transparent 23%),
           linear-gradient(135deg, #ffffff 0%, #fafafa 52%, #ffffff 100%);
         color: var(--ink);
         font-family:
@@ -57,16 +57,9 @@
       }
 
       .page {
-        width: min(100%, 1080px);
+        width: min(100%, 1120px);
         margin: 0 auto;
-        padding: 18px;
-      }
-
-      .card {
-        min-height: calc(100vh - 36px);
-        display: grid;
-        gap: 18px;
-        align-content: start;
+        padding: 16px 18px 84px;
       }
 
       .topbar {
@@ -74,13 +67,13 @@
         align-items: center;
         justify-content: space-between;
         gap: 18px;
-        padding: 6px 0 2px;
+        padding: 8px 0 18px;
       }
 
       .brand {
         color: var(--ink);
         font-size: 16px;
-        font-weight: 900;
+        font-weight: 950;
         letter-spacing: 0.24em;
         line-height: 1;
         text-decoration: none;
@@ -91,21 +84,21 @@
         border-bottom: 1px solid currentColor;
         color: var(--ink);
         font-size: 14px;
-        font-weight: 650;
+        font-weight: 750;
         line-height: 1.2;
         text-decoration: none;
       }
 
-      .business-card {
+      .hero {
         display: grid;
-        gap: 18px;
+        gap: 16px;
       }
 
-      .identity {
+      .profile {
         display: grid;
         justify-items: center;
-        gap: 12px;
-        padding: 18px 0 4px;
+        gap: 10px;
+        padding: 4px 0 2px;
         text-align: center;
       }
 
@@ -122,27 +115,27 @@
       h1 {
         margin: 0;
         color: var(--ink);
-        font-size: clamp(34px, 9vw, 52px);
+        font-size: clamp(34px, 9vw, 54px);
         font-weight: 950;
-        letter-spacing: -0.02em;
-        line-height: 0.92;
+        letter-spacing: -0.03em;
+        line-height: 0.9;
       }
 
       .role {
         margin: 0;
         color: var(--muted);
         font-size: 18px;
-        font-weight: 700;
-        line-height: 1.25;
+        font-weight: 800;
+        line-height: 1.2;
       }
 
-      .positioning {
+      .tagline {
         margin: 0;
-        max-width: 560px;
+        max-width: 590px;
         color: var(--ink);
-        font-size: 16px;
-        font-weight: 650;
-        line-height: 1.35;
+        font-size: 17px;
+        font-weight: 800;
+        line-height: 1.3;
       }
 
       .cta-panel {
@@ -151,7 +144,7 @@
       }
 
       .cta {
-        min-height: 54px;
+        min-height: 52px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -159,7 +152,7 @@
         padding: 14px 16px;
         color: var(--ink);
         font-size: 16px;
-        font-weight: 850;
+        font-weight: 900;
         line-height: 1;
         text-align: center;
         text-decoration: none;
@@ -168,17 +161,9 @@
       .cta-primary {
         min-height: 60px;
         border-width: 2px;
-        gap: 12px;
-        background: transparent;
-        border-color: var(--ink);
-        color: var(--ink);
+        background: var(--ink);
+        color: #ffffff;
         font-size: 17px;
-      }
-
-      .cta-icon {
-        width: 24px;
-        height: 24px;
-        display: block;
       }
 
       .cta-secondary {
@@ -191,14 +176,88 @@
         margin: 0;
         color: var(--muted);
         font-size: 13px;
-        font-weight: 550;
+        font-weight: 650;
         line-height: 1.35;
         text-align: center;
       }
 
-      .quick-details {
+      .statement {
         display: grid;
-        gap: 1px;
+        gap: 8px;
+        border-block: 1px solid var(--ink);
+        padding: 14px 0;
+      }
+
+      .eyebrow,
+      .section-title,
+      .detail-label {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 950;
+        letter-spacing: 0.16em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .statement p,
+      .about p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.45;
+      }
+
+      .sections {
+        display: grid;
+        gap: 22px;
+        margin-top: 22px;
+      }
+
+      .section {
+        display: grid;
+        gap: 14px;
+      }
+
+      .services {
+        display: grid;
+        gap: 10px;
+      }
+
+      .service-card {
+        display: grid;
+        gap: 10px;
+        border: 1px solid var(--ink);
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      .service-card h3 {
+        margin: 0;
+        color: var(--ink);
+        font-size: 18px;
+        font-weight: 950;
+        line-height: 1.1;
+      }
+
+      .service-card ul {
+        display: grid;
+        gap: 6px;
+        margin: 0;
+        padding: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.35;
+        list-style: none;
+      }
+
+      .service-card li::before {
+        content: "— ";
+        color: var(--ink);
+      }
+
+      .details {
+        display: grid;
+        gap: 0;
         border-block: 1px solid var(--ink);
       }
 
@@ -213,80 +272,21 @@
         border-bottom: 0;
       }
 
-      .detail-label {
-        color: var(--muted);
-        font-size: 11px;
-        font-weight: 900;
-        letter-spacing: 0.15em;
-        line-height: 1;
-        text-transform: uppercase;
-      }
-
       .detail-value,
       .detail-value a {
         color: var(--ink);
         font-size: 17px;
-        font-weight: 800;
+        font-weight: 850;
         line-height: 1.2;
         text-decoration: none;
         overflow-wrap: anywhere;
-      }
-
-      .offer {
-        display: grid;
-        gap: 14px;
-        padding: 16px 0;
-      }
-
-      .section-title {
-        margin: 0;
-        color: var(--muted);
-        font-size: 12px;
-        font-weight: 900;
-        letter-spacing: 0.16em;
-        line-height: 1;
-        text-transform: uppercase;
-      }
-
-      .offer-copy {
-        margin: 0;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.45;
-      }
-
-      .services {
-        display: grid;
-        gap: 8px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .services li {
-        border: 1px dashed var(--ink);
-        padding: 10px 12px;
-        background: rgba(255, 255, 255, 0.38);
-        color: var(--ink);
-        font-size: 14px;
-        font-weight: 800;
-        line-height: 1.2;
-      }
-
-      .trust {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
-        color: var(--muted);
-        font-size: 13px;
-        font-weight: 650;
       }
 
       .tech-stack {
         display: grid;
         gap: 12px;
         border-block: 1px solid var(--ink);
-        padding: 16px 0;
+        padding: 14px 0;
       }
 
       .tech-logos {
@@ -294,7 +294,7 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 14px;
-        opacity: 0.66;
+        opacity: 0.62;
       }
 
       .tech-logos img {
@@ -305,8 +305,37 @@
         object-fit: contain;
       }
 
-      .desktop-contact {
-        display: none;
+      .about {
+        display: grid;
+        gap: 12px;
+        border-top: 1px solid var(--ink);
+        padding-top: 14px;
+      }
+
+      .sticky-actions {
+        position: fixed;
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 8px;
+        border: 1px solid var(--ink);
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(10px);
+      }
+
+      .sticky-actions a {
+        min-height: 44px;
+        display: grid;
+        place-items: center;
+        background: var(--ink);
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 900;
+        text-decoration: none;
       }
 
       @media (min-width: 760px) {
@@ -314,30 +343,24 @@
           padding: 28px;
         }
 
-        .card {
-          min-height: calc(100vh - 56px);
-          gap: 22px;
-        }
-
         .topbar {
-          padding-top: 0;
+          padding-bottom: 28px;
         }
 
         .brand {
           font-size: 18px;
         }
 
-        .business-card {
-          grid-template-columns: minmax(280px, 0.8fr) minmax(360px, 1.2fr);
-          gap: 34px;
+        .hero {
+          grid-template-columns: minmax(280px, 0.74fr) minmax(420px, 1.26fr);
+          gap: 42px;
           align-items: start;
         }
 
-        .identity {
+        .profile {
           position: sticky;
           top: 28px;
           justify-items: start;
-          padding-top: 10px;
           text-align: left;
         }
 
@@ -347,106 +370,146 @@
         }
 
         h1 {
-          font-size: clamp(44px, 5vw, 68px);
+          font-size: clamp(50px, 5vw, 72px);
         }
 
         .role {
           font-size: 20px;
         }
 
-        .positioning {
-          font-size: 17px;
-        }
-
         .cta-panel {
-          width: 100%;
-          max-width: 520px;
+          max-width: 560px;
         }
 
         .microcopy {
           text-align: left;
         }
 
-        .quick-details {
-          grid-template-columns: 1fr 1fr;
-          gap: 0 28px;
-          border-top: 1px solid var(--ink);
-          border-bottom: 1px solid var(--ink);
-        }
-
-        .detail:nth-last-child(-n + 2) {
-          border-bottom: 0;
+        .sections {
+          margin-top: 24px;
         }
 
         .services {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        .trust {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+        .details {
+          grid-template-columns: 1fr 1fr;
+          gap: 0 28px;
         }
 
-        .desktop-contact {
-          display: block;
+        .detail:nth-last-child(-n + 2) {
+          border-bottom: 0;
+        }
+
+        .sticky-actions {
+          display: none;
         }
       }
     </style>
   </head>
   <body>
     <main class="page">
-      <article class="card" aria-labelledby="title">
-        <header class="topbar">
-          <a class="brand" href="/" aria-label="Trimara">🤖 Trimara</a>
-          <a class="top-link" href="mailto:bsleboda@trimara.studio">Contact</a>
-        </header>
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Trimara">🤖 Trimara</a>
+        <a class="top-link" href="mailto:bsleboda@trimara.studio">Contact</a>
+      </header>
 
-        <section class="business-card">
-          <div class="identity">
-            <img
-              class="profile-photo"
-              src="assets/trimara-founder.jpeg"
-              alt="Portrait de Blazej SLEBODA"
-              width="300"
-              height="300"
-            >
-            <h1 id="title">Blazej<br>SLEBODA</h1>
-            <p class="role">Consultant IA</p>
-            <p class="positioning">Assistant IA conversationnel pour votre site web.</p>
-          </div>
+      <section class="hero" aria-labelledby="title">
+        <div class="profile">
+          <img
+            class="profile-photo"
+            src="assets/trimara-founder.jpeg"
+            alt="Portrait de Blazej SLEBODA"
+            width="300"
+            height="300"
+          >
+          <h1 id="title">Blazej<br>SLEBODA</h1>
+          <p class="role">Consultant IA</p>
+          <p class="tagline">Solutions IA concrètes pour sites web, équipes locales et activités techniques.</p>
+        </div>
 
-          <div class="conversion">
-            <section class="cta-panel" aria-label="Actions de contact">
-              <a
-                class="cta cta-primary"
-                href="https://www.linkedin.com/in/blazejsleboda"
-                target="_blank"
-                rel="noopener"
-              >
-                <img class="cta-icon" src="assets/LI-In-Bug.png" alt="" width="24" height="24" aria-hidden="true">
-                Contacter sur LinkedIn
-              </a>
-              <div class="cta-secondary">
-                <a class="cta" href="tel:+33661064248">Appeler</a>
-                <a class="cta" href="mailto:bsleboda@trimara.studio">Email</a>
-              </div>
-              <p class="microcopy">Réponse rapide. Premier échange simple, concret et sans friction.</p>
-            </section>
+        <div>
+          <section class="cta-panel" aria-label="Actions de contact">
+            <a class="cta cta-primary" href="mailto:bsleboda@trimara.studio?subject=Agent%20IA%20pour%20mon%20site">
+              Discuter de votre agent IA
+            </a>
+            <div class="cta-secondary">
+              <a class="cta" href="tel:+33661064248">Appeler</a>
+              <a class="cta" href="mailto:bsleboda@trimara.studio">Email</a>
+            </div>
+            <p class="microcopy">Réponse rapide. Premier échange direct, concret, sans tunnel commercial.</p>
+          </section>
 
-            <section class="offer" aria-label="Offre">
-              <h2 class="section-title">Automatisation &amp; Agents IA</h2>
-              <p class="offer-copy">
-                Configuration, installation et maintenance d’agents IA
-                conversationnels pour entreprises, associations et indépendants.
+          <section class="sections">
+            <section class="statement" aria-label="Positionnement">
+              <span class="eyebrow">Automatisation &amp; Agents IA</span>
+              <p>
+                Installation, configuration et maintenance d’agents IA conversationnels,
+                d’automatisations et de systèmes d’observation.
               </p>
-              <ul class="services" aria-label="Services">
-                <li>Agents IA conversationnels</li>
-                <li>Intégration site web</li>
-                <li>Configuration &amp; maintenance</li>
-                <li>Automatisation des échanges</li>
-              </ul>
             </section>
 
-            <section class="quick-details" aria-label="Coordonnées">
+            <section class="section" aria-labelledby="services-title">
+              <h2 class="section-title" id="services-title">Services</h2>
+              <div class="services">
+                <article class="service-card">
+                  <h3>Conseil &amp; Veille IA</h3>
+                  <ul>
+                    <li>identifier les cas d’usage utiles</li>
+                    <li>choisir les outils modernes adaptés</li>
+                    <li>éviter les automatismes inutiles</li>
+                  </ul>
+                </article>
+
+                <article class="service-card">
+                  <h3>Agents IA Conversationnels</h3>
+                  <ul>
+                    <li>réponses aux questions récurrentes</li>
+                    <li>prise de rendez-vous</li>
+                    <li>assistance client ou produit</li>
+                  </ul>
+                </article>
+
+                <article class="service-card">
+                  <h3>Agents IA d’Observation</h3>
+                  <ul>
+                    <li>surveillance de sites internet</li>
+                    <li>suivi de nouvelles dates d’événements</li>
+                    <li>extraction automatique d’informations</li>
+                  </ul>
+                </article>
+
+                <article class="service-card">
+                  <h3>Visualisation Produit par IA</h3>
+                  <ul>
+                    <li>simulation de couleurs</li>
+                    <li>variantes produit</li>
+                    <li>visualisation avant fabrication</li>
+                  </ul>
+                </article>
+              </div>
+            </section>
+
+            <section class="tech-stack" aria-label="Tech Stack">
+              <h2 class="section-title">Tech Stack</h2>
+              <div class="tech-logos">
+                <img src="assets/OpenAI-black-wordmark.png" alt="OpenAI" width="150" height="36">
+                <img src="assets/N8n-logo-new.svg" alt="n8n" width="150" height="36">
+                <img src="assets/elevenlabs-logo-black.png" alt="ElevenLabs" width="150" height="36">
+                <img src="assets/Openclaw-logo-text-dark.png" alt="OpenClaw" width="150" height="36">
+              </div>
+            </section>
+
+            <section class="about" aria-label="Méthode">
+              <h2 class="section-title">Méthode</h2>
+              <p>
+                Profil ingénieur, mobile developer et spécialiste automatisation.
+                Travail court, lisible, mesurable. Une solution utile avant une solution impressionnante.
+              </p>
+            </section>
+
+            <section class="details" aria-label="Coordonnées">
               <div class="detail">
                 <span class="detail-label">Email</span>
                 <span class="detail-value">
@@ -468,19 +531,14 @@
                 <span class="detail-value">792031155</span>
               </div>
             </section>
-
-            <section class="tech-stack" aria-label="Tech Stack">
-              <h2 class="section-title">Tech Stack</h2>
-              <div class="tech-logos">
-                <img src="assets/OpenAI-black-wordmark.png" alt="OpenAI" width="150" height="36">
-                <img src="assets/N8n-logo-new.svg" alt="n8n" width="150" height="36">
-                <img src="assets/elevenlabs-logo-black.png" alt="ElevenLabs" width="150" height="36">
-                <img src="assets/Openclaw-logo-text-dark.png" alt="OpenClaw" width="150" height="36">
-              </div>
-            </section>
-          </div>
-        </section>
-      </article>
+          </section>
+        </div>
+      </section>
     </main>
+
+    <nav class="sticky-actions" aria-label="Contact rapide">
+      <a href="tel:+33661064248">Appeler</a>
+      <a href="mailto:bsleboda@trimara.studio">Email</a>
+    </nav>
   </body>
 </html>
