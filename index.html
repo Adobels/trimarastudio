@@ -161,9 +161,17 @@
       .cta-primary {
         min-height: 60px;
         border-width: 2px;
-        background: var(--ink);
-        color: #ffffff;
+        gap: 12px;
+        background: transparent;
+        color: var(--ink);
         font-size: 17px;
+      }
+
+      .cta-icon {
+        width: 26px;
+        height: 26px;
+        display: block;
+        object-fit: contain;
       }
 
       .cta-secondary {
@@ -239,6 +247,23 @@
         line-height: 1.1;
       }
 
+      .service-desc,
+      .case-note {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .service-label {
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 950;
+        letter-spacing: 0.14em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
       .service-card ul {
         display: grid;
         gap: 6px;
@@ -253,6 +278,11 @@
       .service-card li::before {
         content: "— ";
         color: var(--ink);
+      }
+
+      .case-note {
+        border-top: 1px solid var(--soft);
+        padding-top: 10px;
       }
 
       .details {
@@ -293,8 +323,10 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
         gap: 14px;
         opacity: 0.62;
+        width: 100%;
       }
 
       .tech-logos img {
@@ -310,32 +342,6 @@
         gap: 12px;
         border-top: 1px solid var(--ink);
         padding-top: 14px;
-      }
-
-      .sticky-actions {
-        position: fixed;
-        right: 12px;
-        bottom: 12px;
-        left: 12px;
-        z-index: 10;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        padding: 8px;
-        border: 1px solid var(--ink);
-        background: rgba(255, 255, 255, 0.94);
-        backdrop-filter: blur(10px);
-      }
-
-      .sticky-actions a {
-        min-height: 44px;
-        display: grid;
-        place-items: center;
-        background: var(--ink);
-        color: #ffffff;
-        font-size: 14px;
-        font-weight: 900;
-        text-decoration: none;
       }
 
       @media (min-width: 760px) {
@@ -389,10 +395,6 @@
           margin-top: 24px;
         }
 
-        .services {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
         .details {
           grid-template-columns: 1fr 1fr;
           gap: 0 28px;
@@ -402,9 +404,6 @@
           border-bottom: 0;
         }
 
-        .sticky-actions {
-          display: none;
-        }
       }
     </style>
   </head>
@@ -412,7 +411,6 @@
     <main class="page">
       <header class="topbar">
         <a class="brand" href="/" aria-label="Trimara">🤖 Trimara</a>
-        <a class="top-link" href="mailto:bsleboda@trimara.studio">Contact</a>
       </header>
 
       <section class="hero" aria-labelledby="title">
@@ -431,8 +429,14 @@
 
         <div>
           <section class="cta-panel" aria-label="Actions de contact">
-            <a class="cta cta-primary" href="mailto:bsleboda@trimara.studio?subject=Agent%20IA%20pour%20mon%20site">
-              Discuter de votre agent IA
+            <a
+              class="cta cta-primary"
+              href="https://www.linkedin.com/in/blazejsleboda"
+              target="_blank"
+              rel="noopener"
+            >
+              <img class="cta-icon" src="assets/LI-In-Bug.png" alt="" width="26" height="26" aria-hidden="true">
+              Contacter sur LinkedIn
             </a>
             <div class="cta-secondary">
               <a class="cta" href="tel:+33661064248">Appeler</a>
@@ -455,38 +459,83 @@
               <div class="services">
                 <article class="service-card">
                   <h3>Conseil &amp; Veille IA</h3>
+                  <p class="service-desc">
+                    J’aide les entreprises à identifier des cas d’usage IA concrets
+                    et adaptés à leur activité grâce à une veille continue des
+                    nouveaux outils et tendances.
+                  </p>
+                  <span class="service-label">Exemples</span>
                   <ul>
-                    <li>identifier les cas d’usage utiles</li>
-                    <li>choisir les outils modernes adaptés</li>
-                    <li>éviter les automatismes inutiles</li>
+                    <li>automatisation de tâches répétitives</li>
+                    <li>assistants IA internes</li>
+                    <li>workflows IA connectés aux outils existants</li>
+                    <li>recherche de solutions IA adaptées à un métier</li>
+                    <li>accompagnement dans le choix des outils IA</li>
                   </ul>
                 </article>
 
                 <article class="service-card">
                   <h3>Agents IA Conversationnels</h3>
+                  <p class="service-desc">
+                    Installation d’agents IA texte et voix pour assister
+                    automatiquement les visiteurs de votre site internet.
+                  </p>
+                  <span class="service-label">Exemples</span>
                   <ul>
-                    <li>réponses aux questions récurrentes</li>
+                    <li>réponse aux questions fréquentes</li>
                     <li>prise de rendez-vous</li>
-                    <li>assistance client ou produit</li>
+                    <li>assistance client 24/7</li>
+                    <li>qualification de demandes</li>
+                    <li>aide à la vente de produits et services</li>
                   </ul>
+                  <p class="case-note">
+                    Cas concret : pour une association, un agent IA peut répondre
+                    aux questions sur les statuts, la charte des bénévoles, le
+                    conseil d’administration ou les documents internes.
+                  </p>
                 </article>
 
                 <article class="service-card">
                   <h3>Agents IA d’Observation</h3>
+                  <p class="service-desc">
+                    Agents IA capables de surveiller automatiquement des sites
+                    internet, détecter de nouvelles informations et générer des
+                    alertes ou synthèses.
+                  </p>
+                  <span class="service-label">Exemples</span>
                   <ul>
-                    <li>surveillance de sites internet</li>
-                    <li>suivi de nouvelles dates d’événements</li>
-                    <li>extraction automatique d’informations</li>
+                    <li>suivi automatique de nouvelles dates d’événements</li>
+                    <li>surveillance de mises à jour produits</li>
+                    <li>veille concurrentielle</li>
+                    <li>extraction automatique depuis plusieurs sites</li>
                   </ul>
+                  <p class="case-note">
+                    Cas concret : une base de marathons doit rester à jour.
+                    L’agent surveille les sites concernés et détecte l’annonce
+                    d’une nouvelle date, puis actualise la base de données de
+                    marathons.
+                  </p>
                 </article>
 
                 <article class="service-card">
                   <h3>Visualisation Produit par IA</h3>
+                  <p class="service-desc">
+                    Utilisation de l’IA pour générer rapidement des variantes
+                    visuelles et couleurs de produits dans leur environnement réel.
+                  </p>
+                  <span class="service-label">Exemples</span>
                   <ul>
                     <li>simulation de couleurs</li>
                     <li>variantes produit</li>
-                    <li>visualisation avant fabrication</li>
+                    <li>prévisualisation avant fabrication</li>
+                    <li>aide visuelle pour copropriétés et clients</li>
                   </ul>
+                  <p class="case-note">
+                    Cas concret : pour des boîtes aux lettres, l’IA génère des
+                    variantes directement sur une résidence existante afin
+                    d’aider à choisir les couleurs des boîtes aux lettres à
+                    installer.
+                  </p>
                 </article>
               </div>
             </section>
@@ -499,14 +548,6 @@
                 <img src="assets/elevenlabs-logo-black.png" alt="ElevenLabs" width="150" height="36">
                 <img src="assets/Openclaw-logo-text-dark.png" alt="OpenClaw" width="150" height="36">
               </div>
-            </section>
-
-            <section class="about" aria-label="Méthode">
-              <h2 class="section-title">Méthode</h2>
-              <p>
-                Profil ingénieur, mobile developer et spécialiste automatisation.
-                Travail court, lisible, mesurable. Une solution utile avant une solution impressionnante.
-              </p>
             </section>
 
             <section class="details" aria-label="Coordonnées">
@@ -535,10 +576,5 @@
         </div>
       </section>
     </main>
-
-    <nav class="sticky-actions" aria-label="Contact rapide">
-      <a href="tel:+33661064248">Appeler</a>
-      <a href="mailto:bsleboda@trimara.studio">Email</a>
-    </nav>
   </body>
 </html>
