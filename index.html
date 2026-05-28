@@ -3,20 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Trimara | Agents IA & Automatisation</title>
+    <title>Trimara | Agent IA pour site internet</title>
     <meta
       name="description"
-      content="Trimara installe des agents IA conversationnels, des automatisations et des systèmes d'observation pour sites web, entreprises locales, associations et équipes techniques."
+      content="Installation et maintenance d'agents IA sur votre site internet. Vos visiteurs posent leurs questions en langage naturel et obtiennent des réponses basées sur le contenu de votre site."
     >
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
     <style>
       :root {
-        color-scheme: light;
-        --ink: #050505;
-        --muted: #5d5d5d;
-        --soft: #e6e6e6;
-        --paper: #ffffff;
-        --wash: rgba(255, 255, 255, 0.72);
+        color-scheme: dark;
+        --ink: #f7f4ef;
+        --muted: #aaa39a;
+        --soft: rgba(247, 244, 239, 0.18);
+        --paper: #050505;
+        --orange: #ff7a1a;
+        --panel: rgba(255, 255, 255, 0.055);
       }
 
       * {
@@ -31,9 +32,8 @@
         margin: 0;
         min-height: 100vh;
         background:
-          radial-gradient(circle at 14% 8%, rgba(5, 5, 5, 0.035), transparent 19%),
-          radial-gradient(circle at 86% 90%, rgba(5, 5, 5, 0.028), transparent 23%),
-          linear-gradient(135deg, #ffffff 0%, #fafafa 52%, #ffffff 100%);
+          linear-gradient(135deg, rgba(255, 122, 26, 0.13), transparent 32%),
+          linear-gradient(180deg, #050505 0%, #11100f 54%, #050505 100%);
         color: var(--ink);
         font-family:
           Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
@@ -47,9 +47,9 @@
         z-index: -1;
         content: "";
         background-image:
-          linear-gradient(90deg, rgba(5, 5, 5, 0.018) 1px, transparent 1px),
-          linear-gradient(0deg, rgba(5, 5, 5, 0.018) 1px, transparent 1px);
-        background-size: 20px 20px;
+          linear-gradient(90deg, rgba(247, 244, 239, 0.038) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(247, 244, 239, 0.038) 1px, transparent 1px);
+        background-size: 26px 26px;
         pointer-events: none;
       }
 
@@ -58,9 +58,9 @@
       }
 
       .page {
-        width: min(100%, 1120px);
+        width: min(100%, 1180px);
         margin: 0 auto;
-        padding: 16px 18px 84px;
+        padding: 18px 18px 64px;
       }
 
       .topbar {
@@ -68,12 +68,12 @@
         align-items: center;
         justify-content: space-between;
         gap: 18px;
-        padding: 8px 0 18px;
+        padding: 8px 0 28px;
       }
 
       .brand {
         color: var(--ink);
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 950;
         letter-spacing: 0.24em;
         line-height: 1;
@@ -81,76 +81,113 @@
         text-transform: uppercase;
       }
 
-      .top-link {
-        border-bottom: 1px solid currentColor;
-        color: var(--ink);
-        font-size: 14px;
-        font-weight: 750;
-        line-height: 1.2;
-        text-decoration: none;
-      }
-
       .hero {
         display: grid;
-        gap: 16px;
+        gap: 32px;
+        align-items: start;
       }
 
       .profile {
         display: grid;
         justify-items: center;
-        gap: 10px;
-        padding: 4px 0 2px;
+        gap: 12px;
+        border: 1px solid var(--soft);
+        padding: 18px;
+        background: var(--panel);
         text-align: center;
       }
 
       .profile-photo {
-        width: 112px;
-        height: 112px;
-        border: 1px solid var(--ink);
+        width: 128px;
+        height: 128px;
+        border: 1px solid rgba(255, 122, 26, 0.72);
         border-radius: 50%;
         display: block;
-        filter: grayscale(1);
         object-fit: cover;
       }
 
-      h1 {
+      .profile-name {
         margin: 0;
         color: var(--ink);
-        font-size: clamp(34px, 9vw, 54px);
+        font-size: clamp(28px, 8vw, 46px);
         font-weight: 950;
-        letter-spacing: -0.03em;
-        line-height: 0.9;
+        letter-spacing: 0;
+        line-height: 0.96;
       }
 
       .role {
         margin: 0;
-        color: var(--muted);
-        font-size: 18px;
-        font-weight: 800;
+        color: var(--orange);
+        font-size: 17px;
+        font-weight: 900;
         line-height: 1.2;
       }
 
       .tagline {
         margin: 0;
-        max-width: 590px;
+        max-width: 330px;
         color: var(--ink);
-        font-size: 17px;
+        font-size: 15px;
         font-weight: 800;
-        line-height: 1.3;
+        line-height: 1.35;
+      }
+
+      .hero-copy {
+        display: grid;
+        gap: 22px;
+        order: -1;
+      }
+
+      .slogan {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(46px, 14vw, 96px);
+        font-weight: 950;
+        letter-spacing: 0;
+        line-height: 0.92;
+      }
+
+      .accent {
+        color: var(--orange);
+      }
+
+      .intro {
+        display: grid;
+        gap: 14px;
+        max-width: 760px;
+      }
+
+      .intro p {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(17px, 2.5vw, 22px);
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      .eyebrow {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 950;
+        letter-spacing: 0.16em;
+        line-height: 1;
+        text-transform: uppercase;
       }
 
       .cta-panel {
         display: grid;
         gap: 10px;
+        width: 100%;
+        max-width: 760px;
       }
 
       .cta {
-        min-height: 52px;
+        min-height: 54px;
         display: flex;
         align-items: center;
         justify-content: center;
         border: 1px solid var(--ink);
-        padding: 14px 16px;
+        padding: 15px 18px;
         color: var(--ink);
         font-size: 16px;
         font-weight: 900;
@@ -160,19 +197,9 @@
       }
 
       .cta-primary {
-        min-height: 60px;
-        border-width: 2px;
-        gap: 12px;
-        background: transparent;
-        color: var(--ink);
-        font-size: 17px;
-      }
-
-      .cta-icon {
-        width: 26px;
-        height: 26px;
-        display: block;
-        object-fit: contain;
+        border-color: var(--orange);
+        background: var(--orange);
+        color: #050505;
       }
 
       .cta-secondary {
@@ -181,143 +208,12 @@
         gap: 10px;
       }
 
-      .microcopy {
-        margin: 0;
-        color: var(--muted);
-        font-size: 13px;
-        font-weight: 650;
-        line-height: 1.35;
-        text-align: center;
-      }
-
-      .statement {
-        display: grid;
-        gap: 8px;
-        border-block: 1px solid var(--ink);
-        padding: 14px 0;
-      }
-
-      .eyebrow,
-      .section-title,
-      .detail-label {
-        color: var(--muted);
-        font-size: 11px;
-        font-weight: 950;
-        letter-spacing: 0.16em;
-        line-height: 1;
-        text-transform: uppercase;
-      }
-
-      .statement p,
-      .about p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.45;
-      }
-
-      .sections {
-        display: grid;
-        gap: 22px;
-        margin-top: 0;
-      }
-
-      .section {
-        display: grid;
-        gap: 14px;
-      }
-
-      .services {
-        display: grid;
-        gap: 10px;
-      }
-
-      .service-card {
-        display: grid;
-        gap: 10px;
-        border: 1px solid var(--ink);
-        padding: 14px;
-        background: rgba(255, 255, 255, 0.34);
-      }
-
-      .service-card h3 {
-        margin: 0;
-        color: var(--ink);
-        font-size: 18px;
-        font-weight: 950;
-        line-height: 1.1;
-      }
-
-      .service-desc,
-      .case-note {
-        margin: 0;
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.4;
-      }
-
-      .service-label {
-        color: var(--ink);
-        font-size: 11px;
-        font-weight: 950;
-        letter-spacing: 0.14em;
-        line-height: 1;
-        text-transform: uppercase;
-      }
-
-      .service-card ul {
-        display: grid;
-        gap: 6px;
-        margin: 0;
-        padding: 0;
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.35;
-        list-style: none;
-      }
-
-      .service-card li::before {
-        content: "— ";
-        color: var(--ink);
-      }
-
-      .case-note {
-        border-top: 1px solid var(--soft);
-        padding-top: 10px;
-      }
-
-      .details {
-        display: grid;
-        gap: 0;
-        border-block: 1px solid var(--ink);
-      }
-
-      .detail {
-        display: grid;
-        gap: 5px;
-        padding: 13px 0;
-        border-bottom: 1px solid var(--soft);
-      }
-
-      .detail:last-child {
-        border-bottom: 0;
-      }
-
-      .detail-value,
-      .detail-value a {
-        color: var(--ink);
-        font-size: 17px;
-        font-weight: 850;
-        line-height: 1.2;
-        text-decoration: none;
-        overflow-wrap: anywhere;
-      }
-
       .tech-stack {
         display: grid;
         gap: 12px;
-        border-block: 1px solid var(--ink);
-        padding: 14px 0;
+        max-width: 760px;
+        border-top: 1px solid var(--soft);
+        padding-top: 18px;
       }
 
       .tech-logos {
@@ -326,7 +222,7 @@
         align-items: center;
         justify-content: center;
         gap: 14px;
-        opacity: 0.62;
+        opacity: 0.78;
         width: 100%;
       }
 
@@ -334,20 +230,13 @@
         max-width: 115px;
         max-height: 28px;
         display: block;
-        filter: grayscale(1);
+        filter: grayscale(1) invert(1);
         object-fit: contain;
-      }
-
-      .about {
-        display: grid;
-        gap: 12px;
-        border-top: 1px solid var(--ink);
-        padding-top: 14px;
       }
 
       @media (min-width: 760px) {
         .page {
-          padding: 28px;
+          padding: 28px 28px 72px;
         }
 
         .topbar {
@@ -359,9 +248,13 @@
         }
 
         .hero {
-          grid-template-columns: minmax(280px, 0.74fr) minmax(420px, 1.26fr);
-          gap: 42px;
+          grid-template-columns: minmax(250px, 0.58fr) minmax(520px, 1.42fr);
+          gap: 56px;
           align-items: start;
+        }
+
+        .hero-copy {
+          order: 0;
         }
 
         .profile {
@@ -372,29 +265,16 @@
         }
 
         .profile-photo {
-          width: 138px;
-          height: 138px;
+          width: 156px;
+          height: 156px;
         }
 
-        h1 {
-          font-size: clamp(50px, 5vw, 72px);
+        .profile-name {
+          font-size: clamp(34px, 3.8vw, 48px);
         }
 
         .role {
           font-size: 20px;
-        }
-
-        .microcopy {
-          text-align: left;
-        }
-
-        .details {
-          grid-template-columns: 1fr 1fr;
-          gap: 0 28px;
-        }
-
-        .detail:nth-last-child(-n + 2) {
-          border-bottom: 0;
         }
 
       }
@@ -403,7 +283,7 @@
   <body>
     <main class="page">
       <header class="topbar">
-        <a class="brand" href="/" aria-label="Trimara">🤖 Trimara</a>
+        <a class="brand" href="/" aria-label="Trimara">Trimara</a>
       </header>
 
       <section class="hero" aria-labelledby="title">
@@ -415,189 +295,48 @@
             width="300"
             height="300"
           >
-          <h1 id="title">Blazej<br>SLEBODA</h1>
+          <p class="profile-name">Blazej<br>SLEBODA</p>
           <p class="role">Consultant IA</p>
-          <p class="tagline">Conseil et installation d’agents IA conversationnels pour les sites internet.</p>
+          <p class="tagline">Conseil, installation et maintenance d’agents IA pour votre site internet.</p>
         </div>
 
-        <div>
-          <section class="sections">
-            <section class="section" aria-labelledby="services-title">
-              <h2 class="section-title" id="services-title">Services</h2>
-              <div class="services">
-                <article class="service-card">
-                  <h3>Support client avec agents IA conversationnels</h3>
-                  <p class="service-desc">
-                    Installation d’agents IA texte et voix pour assister
-                    automatiquement les visiteurs de votre site internet.
-                  </p>
-                  <span class="service-label">Exemples</span>
-                  <ul>
-                    <li>réponse aux questions fréquentes</li>
-                    <li>prise de rendez-vous</li>
-                    <li>assistance client 24/7</li>
-                    <li>qualification de demandes</li>
-                    <li>aide à la vente de produits et services</li>
-                  </ul>
-                  <p class="case-note">
-                    Cas concret : pour une association, un agent IA peut répondre
-                    aux questions sur les statuts, la charte des bénévoles, le
-                    conseil d’administration ou les documents internes.
-                  </p>
-                </article>
-                
-                <article class="service-card">
-                  <h3>Surveiller le web avec des agents IA</h3>
-                  <p class="service-desc">
-                    Agents IA capables de surveiller automatiquement des sites
-                    internet, détecter de nouvelles informations et générer des
-                    alertes ou synthèses.
-                  </p>
-                  <span class="service-label">Exemples</span>
-                  <ul>
-                    <li>suivi automatique de nouvelles dates d’événements</li>
-                    <li>surveillance de mises à jour produits</li>
-                    <li>veille concurrentielle</li>
-                    <li>extraction automatique depuis plusieurs sites</li>
-                  </ul>
-                  <p class="case-note">
-                    Cas concret : une base de marathons doit rester à jour.
-                    L’agent surveille les sites concernés et détecte l’annonce
-                    d’une nouvelle date, puis actualise la base de données de
-                    marathons.
-                  </p>
-                </article>
+        <div class="hero-copy">
+          <span class="eyebrow">Installation et maintenance</span>
+          <h1 class="slogan" id="title">
+            Un <span class="accent">Agent IA</span> directement sur votre site internet.
+          </h1>
 
-                <article class="service-card">
-                  <h3>Visualisation Produit par IA</h3>
-                  <p class="service-desc">
-                    Utilisation de l’IA pour générer rapidement des variantes
-                    visuelles et couleurs de produits dans leur environnement réel.
-                  </p>
-                  <span class="service-label">Exemples</span>
-                  <ul>
-                    <li>simulation de couleurs</li>
-                    <li>variantes produit</li>
-                    <li>prévisualisation avant fabrication</li>
-                    <li>aide visuelle pour copropriétés et clients</li>
-                  </ul>
-                  <p class="case-note">
-                    Cas concret : pour des boîtes aux lettres, l’IA génère des
-                    variantes directement sur une résidence existante afin
-                    d’aider à choisir les couleurs des boîtes aux lettres à
-                    installer.
-                  </p>
-                </article>
+          <div class="intro">
+            <p>
+              Vos visiteurs peuvent poser leurs questions en langage naturel et
+              recevoir des réponses basées sur le contenu de votre site, sans
+              chercher dans les liens ni les onglets du menu.
+            </p>
+            <p>
+              Les conversations révèlent les questions réelles de vos visiteurs
+              et aident à préparer des réponses claires pour les demandes qui se
+              répètent.
+            </p>
+          </div>
 
-                <article class="service-card">
-                  <h3>Développement d’apps mobiles avec IA</h3>
-                  <p class="service-desc">
-                    Développement d’applications métier plus rapide et plus
-                    accessible grâce à l’IA, avec une exigence de qualité issue
-                    de 15 ans d’expérience en apps mobiles natives iOS et Android.
-                  </p>
-                  <span class="service-label">Exemples</span>
-                  <ul>
-                    <li>applications métier internes</li>
-                    <li>interfaces mobiles pour équipes terrain</li>
-                    <li>prototypes rapides validables par les utilisateurs</li>
-                    <li>outils mobiles connectés à des données existantes</li>
-                  </ul>
-                  <p class="case-note">
-                    Cas concret : une application mobile qui affiche tous vos
-                    clients sur une carte pour préparer les visites, organiser
-                    les tournées ou visualiser une zone d’activité.
-                  </p>
-                </article>
+          <section class="cta-panel" aria-label="Actions de contact">
+            <a class="cta cta-primary" href="mailto:bsleboda@trimara.studio">
+              Demander une installation
+            </a>
+            <div class="cta-secondary">
+              <a class="cta" href="tel:+33661064248">Appeler</a>
+              <a class="cta" href="https://www.linkedin.com/in/blazejsleboda" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </section>
 
-                <article class="service-card">
-                  <h3>Conseil &amp; Veille IA</h3>
-                  <p class="service-desc">
-                    J’aide les entreprises à identifier des cas d’usage IA concrets
-                    et adaptés à leur activité grâce à une veille continue des
-                    nouveaux outils et tendances.
-                  </p>
-                  <span class="service-label">Exemples</span>
-                  <ul>
-                    <li>automatisation de tâches répétitives</li>
-                    <li>assistants IA internes</li>
-                    <li>workflows IA connectés aux outils existants</li>
-                    <li>recherche de solutions IA adaptées à un métier</li>
-                    <li>accompagnement dans le choix des outils IA</li>
-                  </ul>
-                </article>
-              </div>
-            </section>
-
-            <section class="tech-stack" aria-label="Tech Stack">
-              <h2 class="section-title">Tech Stack</h2>
-              <div class="tech-logos">
-                <img src="assets/elevenlabs-logo-black.png" alt="ElevenLabs" width="150" height="36">
-                <img src="assets/OpenAI-black-wordmark.png" alt="OpenAI" width="150" height="36">
-                <img src="assets/N8n-logo-new.svg" alt="n8n" width="150" height="36">
-                <img src="assets/Openclaw-logo-text-dark.png" alt="OpenClaw" width="150" height="36">
-              </div>
-            </section>
-
-            <section class="details" aria-label="Coordonnées">
-              <div class="detail">
-                <span class="detail-label">Email</span>
-                <span class="detail-value">
-                  <a href="mailto:bsleboda@trimara.studio">bsleboda@trimara.studio</a>
-                </span>
-              </div>
-              <div class="detail">
-                <span class="detail-label">Téléphone</span>
-                <span class="detail-value">
-                  <a href="tel:+33661064248">+33.06.61.06.42.48</a>
-                </span>
-              </div>
-              <div class="detail">
-                <span class="detail-label">Siège social</span>
-                <span class="detail-value">Caen</span>
-              </div>
-              <div class="detail">
-                <span class="detail-label">SIREN</span>
-                <span class="detail-value">792031155</span>
-              </div>
-            </section>
-
-            <section class="cta-panel" aria-label="Actions de contact">
-              <a
-                class="cta cta-primary"
-                href="https://www.linkedin.com/in/blazejsleboda"
-                target="_blank"
-                rel="noopener"
-              >
-                <img class="cta-icon" src="assets/LI-In-Bug.png" alt="" width="26" height="26" aria-hidden="true">
-                Contacter sur LinkedIn
-              </a>
-              <div class="cta-secondary">
-                <a class="cta" href="tel:+33661064248">Appeler</a>
-                <a class="cta" href="mailto:bsleboda@trimara.studio">Email</a>
-              </div>
-            </section>
-
-            <section class="statement" aria-label="À propos de moi">
-              <span class="eyebrow">À propos de moi</span>
-              <p>
-                Depuis l’explosion de l’IA générative fin 2022 avec l’arrivée de ChatGPT,
-                les outils basés sur l’intelligence artificielle évoluent à une vitesse
-                exceptionnelle. Très tôt, j’ai commencé à expérimenter ces nouvelles
-                technologies, à suivre leur évolution et à intégrer progressivement des
-                outils IA dans des usages concrets liés au développement logiciel,
-                à l’automatisation et à l’organisation des activités.
-              </p>
-              <p>
-                Ingénieur en génie mécanique de formation, j’ai travaillé dans les bureaux de recherche et développement de Faurecia à Flers et Caligny avant d’évoluer vers le développement logiciel. J’ai ensuite participé à des projets numériques au sein d’équipes techniques pour des entreprises et médias tels que Le Figaro, BNP Paribas et Radio France. Cette expérience me permet aujourd’hui d’aborder les problématiques opérationnelles des organisations avec les outils IA modernes, de manière concrète et pragmatique.
-              </p>
-              <p>
-                Aujourd’hui, je mets cette expérience technique au service des entreprises,
-                associations et indépendants afin de les accompagner dans l’intégration
-                concrète des agents IA, automatisations IA et nouveaux outils liés
-                à l’intelligence artificielle.
-              </p>
-            </section>
+          <section class="tech-stack" aria-label="Tech Stack">
+            <span class="eyebrow">Technologies</span>
+            <div class="tech-logos">
+              <img src="assets/elevenlabs-logo-black.png" alt="ElevenLabs" width="150" height="36">
+              <img src="assets/OpenAI-black-wordmark.png" alt="OpenAI" width="150" height="36">
+              <img src="assets/N8n-logo-new.svg" alt="n8n" width="150" height="36">
+              <img src="assets/Openclaw-logo-text-dark.png" alt="OpenClaw" width="150" height="36">
+            </div>
           </section>
         </div>
       </section>
