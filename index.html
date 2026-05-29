@@ -324,6 +324,22 @@
         line-height: 0.95;
       }
 
+      .calendar {
+        display: grid;
+        gap: 18px;
+        margin-top: 58px;
+        border-top: 1px solid var(--soft);
+        padding-top: 28px;
+      }
+
+      .calendly-inline-widget {
+        width: 100%;
+        min-width: 320px;
+        height: 700px;
+        border: 1px solid var(--soft);
+        background: var(--panel);
+      }
+
       @media (min-width: 760px) {
         .page {
           padding: 28px 28px 190px;
@@ -371,6 +387,10 @@
           margin-top: 76px;
         }
 
+        .calendar {
+          margin-top: 76px;
+        }
+
         .examples-grid {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -382,6 +402,10 @@
         }
       }
     </style>
+    <script type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      defer>
+    </script>
   </head>
   <body>
     <main class="page">
@@ -543,9 +567,6 @@
         </div>
       </section>
     </main>
-    <elevenlabs-convai agent-id="agent_1201ksqfv2rhf6st0snn008s89ga"></elevenlabs-convai>
-    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-
     <elevenlabs-convai agent-id="agent_1201ksqfv2rhf6st0snn008s89ga"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
   </body>
 </html>
