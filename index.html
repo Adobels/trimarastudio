@@ -186,6 +186,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 10px;
         border: 1px solid var(--ink);
         padding: 15px 18px;
         color: var(--ink);
@@ -206,6 +207,13 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
+      }
+
+      .cta-logo {
+        width: 22px;
+        height: 22px;
+        display: block;
+        object-fit: contain;
       }
 
       .tech-stack {
@@ -232,6 +240,81 @@
         display: block;
         filter: grayscale(1) invert(1);
         object-fit: contain;
+      }
+
+      .examples {
+        display: grid;
+        gap: 22px;
+        margin-top: 58px;
+        border-top: 1px solid var(--soft);
+        padding-top: 28px;
+      }
+
+      .examples-heading {
+        display: grid;
+        gap: 12px;
+        max-width: 820px;
+      }
+
+      .examples-title {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(36px, 9vw, 72px);
+        font-weight: 950;
+        letter-spacing: 0;
+        line-height: 0.94;
+      }
+
+      .examples-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .example-card {
+        display: grid;
+        gap: 12px;
+        border: 1px solid var(--soft);
+        padding: 18px;
+        background: var(--panel);
+      }
+
+      .example-copy {
+        display: grid;
+        align-content: start;
+        gap: 8px;
+      }
+
+      .example-copy h3 {
+        margin: 0;
+        color: var(--ink);
+        font-size: 22px;
+        font-weight: 950;
+        line-height: 1.1;
+      }
+
+      .example-copy p,
+      .examples-summary p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 16px;
+        font-weight: 650;
+        line-height: 1.45;
+      }
+
+      .examples-summary {
+        display: grid;
+        gap: 16px;
+        border-top: 1px solid rgba(255, 122, 26, 0.55);
+        padding-top: 24px;
+      }
+
+      .examples-summary-title {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(34px, 8vw, 68px);
+        font-weight: 950;
+        letter-spacing: 0;
+        line-height: 0.95;
       }
 
       @media (min-width: 760px) {
@@ -277,13 +360,26 @@
           font-size: 20px;
         }
 
+        .examples {
+          margin-top: 76px;
+        }
+
+        .examples-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 900px) {
+        .examples-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
     </style>
   </head>
   <body>
     <main class="page">
       <header class="topbar">
-        <a class="brand" href="/" aria-label="Trimara">Trimara</a>
+        <a class="brand" href="/" aria-label="Trimara">🤖 Trimara</a>
       </header>
 
       <section class="hero" aria-labelledby="title">
@@ -296,7 +392,7 @@
             height="300"
           >
           <p class="profile-name">Blazej<br>SLEBODA</p>
-          <p class="role">Consultant IA</p>
+          <p class="role">Consultant et installateur des agents IA</p>
           <p class="tagline">Conseil, installation et maintenance d’agents IA pour votre site internet.</p>
         </div>
 
@@ -320,12 +416,15 @@
           </div>
 
           <section class="cta-panel" aria-label="Actions de contact">
-            <a class="cta cta-primary" href="mailto:bsleboda@trimara.studio">
-              Demander une installation
+            <a class="cta cta-primary" href="mailto:contact@trimara.studio">
+              Demander plus d’informations
             </a>
             <div class="cta-secondary">
-              <a class="cta" href="tel:+33661064248">Appeler</a>
-              <a class="cta" href="https://www.linkedin.com/in/blazejsleboda" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="cta" href="tel:+330661064248">Appeler</a>
+              <a class="cta" href="https://www.linkedin.com/in/blazejsleboda" target="_blank" rel="noopener">
+                <img class="cta-logo" src="assets/LI-In-Bug.png" alt="" width="22" height="22" aria-hidden="true">
+                LinkedIn
+              </a>
             </div>
           </section>
 
@@ -338,6 +437,115 @@
               <img src="assets/Openclaw-logo-text-dark.png" alt="OpenClaw" width="150" height="36">
             </div>
           </section>
+        </div>
+      </section>
+
+      <section class="examples" aria-labelledby="examples-title">
+        <div class="examples-heading">
+          <span class="eyebrow">Exemples</span>
+          <h2 class="examples-title" id="examples-title">
+            Des <span class="accent">Agents IA</span> adaptés à votre structure.
+          </h2>
+        </div>
+
+        <div class="examples-grid">
+          <article class="example-card">
+            <div class="example-copy">
+              <h3>Association</h3>
+              <p>
+                L’agent peut renseigner les visiteurs sur les statuts, la charte
+                des bénévoles et les autres documents de l’association. Il peut
+                aussi expliquer comment devenir membre et comment acheter une
+                adhésion.
+              </p>
+            </div>
+          </article>
+
+          <article class="example-card">
+            <div class="example-copy">
+              <h3>Professeur de guitare</h3>
+              <p>
+                Les visiteurs peuvent obtenir des informations sur les prix, les
+                moyens de contact, l’expérience du professeur et ses méthodes
+                d’apprentissage.
+              </p>
+            </div>
+          </article>
+
+          <article class="example-card">
+            <div class="example-copy">
+              <h3>Site d’information</h3>
+              <p>
+                Sur un site internet riche en informations, l’agent aide les
+                visiteurs à comprendre le sujet, retrouver les bonnes pages,
+                obtenir des explications claires et passer plus facilement à
+                l’action quand un produit ou un service est proposé.
+              </p>
+            </div>
+          </article>
+
+          <article class="example-card">
+            <div class="example-copy">
+              <h3>Artisan</h3>
+              <p>
+                Une entreprise artisanale peut répondre aux questions sur ses
+                prestations, ses zones d’intervention, ses délais, ses tarifs
+                indicatifs et les informations nécessaires pour préparer une
+                demande de devis.
+              </p>
+            </div>
+          </article>
+
+          <article class="example-card">
+            <div class="example-copy">
+              <h3>Entreprise</h3>
+              <p>
+                Une entreprise qui possède des archives, des documents internes
+                ou un organigramme peut aider ses visiteurs à trouver le bon
+                contact, envoyer une demande de devis ou acheter des produits.
+                Dans la majorité des cas, un scan OCR des documents est
+                nécessaire.
+              </p>
+            </div>
+          </article>
+
+          <article class="example-card">
+            <div class="example-copy">
+              <h3>Mairie</h3>
+              <p>
+                Les habitants de la commune peuvent se renseigner sur les
+                services municipaux, l’état d’un projet d’urbanisation, les
+                actualités locales et les informations liées aux élections.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="examples-summary">
+          <h3 class="examples-summary-title">
+            Peu importe le cas d’usage, le visiteur obtient une
+            <span class="accent">réponse pertinente</span> par conversation
+            <span class="accent">sans naviguer</span> entre les pages du site.
+          </h3>
+          <p>
+            Le visiteur de votre site communique comme avec ChatGPT, par texte
+            ou par audio, mais avec un agent qui connaît le contenu du site et
+            les informations de votre activité.
+          </p>
+          <p>
+            Le propriétaire du site peut aussi voir quelles questions les
+            visiteurs posent, comprendre ce qu’ils cherchent et améliorer le
+            contenu du site à partir de ces conversations.
+          </p>
+          <p>
+            Même un petit site avec le contenu d’une carte de visite peut en
+            profiter pour découvrir ce que les visiteurs cherchent réellement.
+          </p>
+          <h3 class="examples-summary-title">
+            <span class="accent">Oubliez</span> les anciens
+            <span class="accent">chatbots</span> et les champs de recherche de
+            votre site internet, un Agent IA les remplace.
+          </h3>
         </div>
       </section>
     </main>
