@@ -60,7 +60,7 @@
       .page {
         width: min(100%, 1180px);
         margin: 0 auto;
-        padding: 18px 18px 64px;
+        padding: 18px 18px 180px;
       }
 
       .topbar {
@@ -308,6 +308,13 @@
         padding-top: 24px;
       }
 
+      .orange-separator {
+        width: 100%;
+        height: 1px;
+        margin: 34px 0;
+        background: rgba(255, 122, 26, 0.78);
+      }
+
       .examples-summary-title {
         margin: 0;
         color: var(--ink);
@@ -319,7 +326,7 @@
 
       @media (min-width: 760px) {
         .page {
-          padding: 28px 28px 72px;
+          padding: 28px 28px 190px;
         }
 
         .topbar {
@@ -444,7 +451,7 @@
         <div class="examples-heading">
           <span class="eyebrow">Exemples</span>
           <h2 class="examples-title" id="examples-title">
-            Des <span class="accent">Agents IA</span> adaptés à votre structure.
+            Des <span class="accent">Agents IA</span> adaptés à votre site internet.
           </h2>
         </div>
 
@@ -524,32 +531,21 @@
         <div class="examples-summary">
           <h3 class="examples-summary-title">
             Peu importe le cas d’usage, le visiteur obtient une
-            <span class="accent">réponse pertinente</span> par conversation
+            <span class="accent">réponse</span> pertinente par conversation
             <span class="accent">sans naviguer</span> entre les pages du site.
           </h3>
-          <p>
-            Le visiteur de votre site communique comme avec ChatGPT, par texte
-            ou par audio, mais avec un agent qui connaît le contenu du site et
-            les informations de votre activité.
-          </p>
-          <p>
-            Le propriétaire du site peut aussi voir quelles questions les
-            visiteurs posent, comprendre ce qu’ils cherchent et améliorer le
-            contenu du site à partir de ces conversations.
-          </p>
-          <p>
-            Même un petit site avec le contenu d’une carte de visite peut en
-            profiter pour découvrir ce que les visiteurs cherchent réellement.
-          </p>
+          <div class="orange-separator" aria-hidden="true"></div>
           <h3 class="examples-summary-title">
-            <span class="accent">Oubliez</span> les anciens
-            <span class="accent">chatbots</span> et les champs de recherche de
-            votre site internet, un Agent IA les remplace.
+            Oubliez les anciens <span class="accent">chatbots</span> et les
+            <span class="accent">champs de recherche</span> de votre site
+            internet, un <span class="accent">Agent IA les remplace</span>.
           </h3>
         </div>
       </section>
     </main>
     <elevenlabs-convai agent-id="agent_1201ksqfv2rhf6st0snn008s89ga"></elevenlabs-convai>
     <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
+    <elevenlabs-convai agent-id="agent_1201ksqfv2rhf6st0snn008s89ga"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
   </body>
 </html>
